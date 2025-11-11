@@ -62,10 +62,10 @@ function openFileFolder(e) {
                 assignPages = pagesDict[i][1];
             }
         }
-        
-        iframeDialog.setAttribute("src", `/pages/${assignPages}.html`);
     }
     
+    iframeDialog.setAttribute("src", `/pages/${assignPages}.html`);
+
     dialog.showModal();
 }
 
