@@ -1,0 +1,119 @@
+body {
+    position: fixed;
+    margin: 0;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+main {
+    position: relative;
+    background-image: url(/imgs/desktop_wallpaper.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 93vh;
+}
+
+main img {
+    width: 80px;
+}
+
+.files-folders-row {
+    display: flex;
+    padding: 12px 0px 22px 12px;
+    gap: 20px;
+}
+
+.individual-element {
+    padding: 8px;
+    text-align: center;
+}
+
+.individual-element:hover {
+    background-color: #abcbff58;
+    border-radius: 15px;
+    outline: 2px solid #abcbff9c;
+}
+
+.individual-element p {
+    margin: 5px 0px;
+}
+
+dialog {
+    margin: 0;
+    top: 15%;
+    left: 30%;
+    position: absolute;
+    padding: 0px 5px 3px 5px;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #0058e7;
+    border: 3px solid #0048bb;
+}
+
+#window-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+dialog h2 {
+    margin: 7px 0px 7px 10px;
+    color: white;
+    font-weight: normal;
+}
+
+dialog img {
+    width: 30px;
+    padding-right: 10px;
+    transition: .2s ease-in-out;
+}
+
+dialog img:hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+dialog:open {
+    animation: fade-in 0.3s ease-in-out forwards;
+}
+
+iframe {
+    width: 800px;
+    height: 600px;
+    border: 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    background-color: #0058e7;
+    color: white;
+    border-top: 3px solid #418aff;
+    min-height: 7vh;
+}
+
+footer h1 {
+    margin: 0;
+}
+
+footer img {
+    margin-left: 10px;
+    width: 50px;
+    transition: .2s ease-in-out;
+}
+
+footer img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: brightness(110%);
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fade-out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

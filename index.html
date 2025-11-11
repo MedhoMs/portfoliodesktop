@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <main>
+        <div class="files-folders-row">
+            <div class="individual-element" >
+                <img src="/imgs/folder.png" alt="folder" id="proyecto1" class="file-folder">
+                <p>Proyectos</p>
+            </div>
+        </div>
+
+        <div class="files-folders-row">
+            <div class="individual-element">
+                <img src="/imgs/txt.png" alt="file" id="lenguaje1" class="file-folder">
+                <p>Lenguajes.txt</p>
+            </div>
+        </div>
+
+        <div class="files-folders-row">
+            <div class="individual-element">
+                <img src="/imgs/mail.png" alt="email" id="contacto1" class="file-folder">
+                <p>Contacto</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <img src="/imgs/windows.png" alt="">
+    </footer>
+
+    <dialog id="dialog-content"><!--closedby="any"-->
+        <div id="window-title">
+            <h2 id="dynamic-title"></h2>
+            <img src="/imgs/cancelar.png" alt="salir" id="close-dialog">
+        </div>
+
+        <iframe src="/pages/projects.html" id="iframe-dialog"></iframe>
+    </dialog>
+
+    <script src="main.js"></script>
+</body>
+</html>
