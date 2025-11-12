@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="/pages/projects.html" as="document">
-    <link rel="preload" href="/pages/contacts.html" as="document">
-    <link rel="preload" href="/pages/languages.html" as="document">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
 </head>
@@ -43,7 +40,9 @@
             <img src="/imgs/cancelar.png" alt="salir" id="close-dialog">
         </div>
 
-        <iframe src="/pages/projects.html" id="iframe-dialog"></iframe>
+        <iframe src="/pages/projects.html" class="iframe-dialog" id="iframe-projects" hidden></iframe>
+        <iframe src="/pages/contact.html" class="iframe-dialog" id="iframe-contact" hidden></iframe>
+        <iframe src="/pages/languages.html" class="iframe-dialog" id="iframe-languages" hidden></iframe>
     </dialog>
 
     <script src="main.js"></script>
