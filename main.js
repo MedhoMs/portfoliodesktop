@@ -53,10 +53,8 @@ setInterval(updateTimeDate, 1000);
 updateTimeDate();
 
 
-const backgroundImagesList = ["/imgs/background-desktop0.jpg", "/imgs/background-desktop1.jpg", "/imgs/background-desktop2.jpg", "/imgs/background-desktop3.jpg"];
+const backgroundImagesList = ["/imgs/background-desktop0.jpg", "/imgs/background-desktop1.jpg", "/imgs/background-desktop2.jpg"];
 
-console.log(backgroundImagesList[0]);
-console.log(backgroundImagesList[1]);
 
 ///////OBJECTS-LISTS///////
 
