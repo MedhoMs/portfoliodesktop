@@ -24,7 +24,7 @@ let windowsButtonOptions = document.getElementById("windows-button-options"); //
 const pages = {
     "Proyectos" : "projects",
     "Contacto" : "contact",
-    "Lenguajes.txt" : "languages",
+    "Lenguajes" : "languages",
 }
 
 const pagesDictKeys = Object.keys(pages); //Obtengo solo las keys
