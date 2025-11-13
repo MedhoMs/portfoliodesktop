@@ -3,36 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="image" href="/imgs/folder.png">
+    <link rel="preload" as="image" href="/imgs/txt.png">
+    <link rel="preload" as="image" href="/imgs/mail.png">
+    <link rel="preload" as="image" href="/imgs/github.png">
+    <link rel="preload" as="image" href="/imgs/background-desktop0.jpg">
+    <link rel="preload" as="image" href="/imgs/background-desktop1.jpg">
+    <link rel="preload" as="image" href="/imgs/background-desktop2.jpg">
+    <link rel="preload" as="image" href="/imgs/background-desktop3.jpg">
+    <link rel="preload" as="image" href="/imgs/cancelar.png">
+    <link rel="preload" as="image" href="/imgs/windows.png">
+    <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
 </head>
 <body>
-    <main>
+    <main id="desktop">
         <div class="files-folders-row">
             <div class="individual-element" >
-                <img src="/imgs/folder.png" alt="folder" id="proyecto1" class="file-folder">
+                <img src="/imgs/folder.png" alt="folder" id="projects" class="file-folder">
                 <p>Proyectos</p>
             </div>
         </div>
 
         <div class="files-folders-row">
             <div class="individual-element">
-                <img src="/imgs/txt.png" alt="file" id="lenguaje1" class="file-folder">
+                <img src="/imgs/txt.png" alt="file" id="languages" class="file-folder">
                 <p>Lenguajes.txt</p>
             </div>
         </div>
 
         <div class="files-folders-row">
             <div class="individual-element">
-                <img src="/imgs/mail.png" alt="email" id="contacto1" class="file-folder">
+                <img src="/imgs/mail.png" alt="email" id="contact" class="file-folder">
                 <p>Contacto</p>
             </div>
         </div>
-    </main>
 
-    <footer>
-        <img src="/imgs/windows.png" alt="">
-    </footer>
+        <div class="files-folders-row">
+            <div class="individual-element">
+                <a href="https://github.com/MedhoMs">
+                    <img src="/imgs/github.png" alt="email" id="github" class="file-folder">
+                </a>
+                <p>Github</p>
+            </div>
+        </div>
+    </main>
 
     <dialog id="dialog-content"><!--closedby="any"-->
         <div id="window-title">
@@ -41,9 +57,36 @@
         </div>
 
         <iframe src="/pages/projects.html" class="iframe-dialog" id="iframe-projects" hidden></iframe>
-        <iframe src="/pages/contact.html" class="iframe-dialog" id="iframe-contact" hidden></iframe>
         <iframe src="/pages/languages.html" class="iframe-dialog" id="iframe-languages" hidden></iframe>
+        <iframe src="/pages/contact.html" class="iframe-dialog" id="iframe-contact" hidden></iframe>
     </dialog>
+
+    <footer>
+        <div>
+            <img src="/imgs/windows.png" alt="" id="windows-button">
+            <div id="windows-button-options">
+                <div class="each-windows-option">
+                    <p>Background</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="left-arrow" width="45" height="45" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-big-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9.586 4l-6.586 6.586a2 2 0 0 0 0 2.828l6.586 6.586a2 2 0 0 0 2.18 .434l.145 -.068a2 2 0 0 0 1.089 -1.78v-2.586h7a2 2 0 0 0 2 -2v-4l-.005 -.15a2 2 0 0 0 -1.995 -1.85l-7 -.001v-2.585a2 2 0 0 0 -3.414 -1.414z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="rigth-arrow" width="45" height="45" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-arrow-big-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" /></svg>
+                </div>
+                <div class="each-windows-option">
+                    <p>Ajustes</p>
+                </div>
+                <div class="each-windows-option">
+                    <p>Colores</p>
+                </div>
+                <div class="each-windows-option">
+                    <p>Sistema</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="date-time">
+            <p id="footer-time">Hora</p>
+            <p id="footer-date">dd/mm/aaaa</p>
+        </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>

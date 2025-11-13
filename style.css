@@ -5,8 +5,9 @@ body {
 }
 
 main {
+    transition: .4s ease;
     position: relative;
-    background-image: url(/imgs/desktop_wallpaper.jpg);
+    background-image: url(/imgs/background-desktop0.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,7 +75,7 @@ dialog img:hover {
 }
 
 dialog:open {
-    animation: fade-in 0.3s ease-in-out forwards;
+    animation: pop-up-iframe .5s ease-in-out forwards;
 }
 
 iframe {
@@ -86,6 +87,7 @@ iframe {
 footer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #0058e7;
     color: white;
     border-top: 3px solid #418aff;
@@ -108,12 +110,62 @@ footer img:hover {
     filter: brightness(110%);
 }
 
-@keyframes fade-in {
-    from {opacity: 0;}
-    to {opacity: 1;}
+#windows-button-options {
+    transition: .2s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    bottom: 70px;
+    width: 300px;
+    background-color: #1d4d9b;
+    border-top: 3px solid #418aff;
+    border-right: 3px solid #418aff;
+}
+
+#windows-button-options p {
+    margin: 0;
+    padding: 5px 0px 5px 10px;
+    font-size: 25px;
+}
+
+.each-windows-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.each-windows-option p:hover {
+    cursor: pointer;
+}
+
+.each-windows-option svg {
+    transition: .2s ease-in-out;
+}
+
+.each-windows-option svg:hover {
+    cursor: pointer;
+    color: rgb(176, 176, 176);
+}
+
+#date-time {
+    text-align: center;
+    margin-right: 20px;
+}
+
+#date-time p {
+    margin: 0;
+    font-size: 18px;
+}
+
+#footer-time {
+    padding-bottom: 6px;
+}
+
+@keyframes pop-up-iframe {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
 }
 
 @keyframes fade-out {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
