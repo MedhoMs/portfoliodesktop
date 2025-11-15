@@ -1,11 +1,23 @@
+//////VARIABLES//////
+
 let projectsTitles = document.querySelectorAll("nav p");
 let individualProjects = document.querySelectorAll(".image-and-description");
 let projectsImages = document.querySelectorAll(".project-image");
+
+//////VARIABLES//////
+
+
+//////GLOBAL VARIABLES//////
 
 let projectTitleSelected; //Usado para extraer el titulo del proyecto seleccionado en el nav
 let projectImageSelected; //Usado para extraer la imagen del proyecto correspondiente al nav seleccionado
 let projectDescription;
 let showHideDescription; //Boolean para mostrar u ocultar la descripcion del proyecto seleccionado
+
+//////GLOBAL VARIABLES//////
+
+
+//////EVENTS//////
 
 projectsTitles.forEach(projectTitle => {
     projectTitle.addEventListener("mouseup", showProject);
@@ -23,6 +35,12 @@ projectsImages.forEach(projectImage => {
     });
 });
 
+//////EVENTS//////
+
+
+//////FUNCTIONS//////
+individualProjects[0].classList.add("project-visible");
+projectsTitles[0].style.borderBottom = "3px solid black";
 
 function showProject(e) {
     projectTitleSelected = e.target.getAttribute("name");
@@ -31,6 +49,7 @@ function showProject(e) {
     for (let i = 0; i < individualProjects.length; i++) {
         if (projectTitleSelected === individualProjects[i].id) {
             individualProjects[i].hidden = false;
+            projectsTitles[i].style.borderBottom = "3px solid black";
             //Uso el setTimeout para que al quitarle el hidden, espere un momento para que el HTML reconozca que el elemento existe,
             //y pueda aplicarle la clase que permite la animacion
             setTimeout(() => {
@@ -38,6 +57,7 @@ function showProject(e) {
             }, 200);
         } else {
             individualProjects[i].classList.remove("project-visible");
+            projectsTitles[i].style.borderBottom = "none";
             setTimeout(() => {
                 individualProjects[i].hidden = true;
             }, 200);
@@ -48,7 +68,6 @@ function showProject(e) {
 function showProjectDescription(e, showHideDescription) {
 
     projectImageSelected = e.target; //Imagen por la cual paso el raton por arriba
-    console.log(projectImageSelected);
     projectDescription = projectImageSelected.nextElementSibling; //El siguiente elemento de projectImageSelected, el texto
 
     if (showHideDescription) {
@@ -58,3 +77,5 @@ function showProjectDescription(e, showHideDescription) {
         projectDescription.classList.remove("description-visible");
     }
 }
+
+//////FUNCTIONS//////

@@ -55,8 +55,8 @@ nav p:hover {
     position: absolute;
     left: 60px;
     opacity: 0;
-    transform: translateY(5px);
-    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+    transform: translateY(10px);
+    transition: .2s ease-in-out;
 }
 
 .image-and-description.project-visible {

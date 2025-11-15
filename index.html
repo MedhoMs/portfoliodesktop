@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" as="image" href="/imgs/folder.png">
-    <link rel="preload" as="image" href="/imgs/file.png">
-    <link rel="preload" as="image" href="/imgs/mail.png">
-    <link rel="preload" as="image" href="/imgs/github.png">
+    <link rel="preload" as="image" href="/imgs/icons/folder.png">
+    <link rel="preload" as="image" href="/imgs/icons/file.png">
+    <link rel="preload" as="image" href="/imgs/icons/mail.png">
+    <link rel="preload" as="image" href="/imgs/icons/github.png">
     <link rel="preload" as="image" href="/imgs/backgrounds/background-desktop0.jpg">
     <link rel="preload" as="image" href="/imgs/backgrounds/background-desktop1.jpg">
     <link rel="preload" as="image" href="/imgs/backgrounds/background-desktop2.jpg">
-    <link rel="preload" as="image" href="/imgs/cancelar.png">
-    <link rel="preload" as="image" href="/imgs/windows.png">
+    <link rel="preload" as="image" href="/imgs/icons/cancelar.png">
+    <link rel="preload" as="image" href="/imgs/icons/windows.png">
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio</title>
@@ -21,21 +21,21 @@
         <div class="files-folders-row">
             <div class="individual-element">
                 <p>Proyectos</p>
-                <img src="/imgs/folder.png" alt="folder" id="projects">
+                <img src="/imgs/icons/folder.png" alt="folder" id="projects">
             </div>
         </div>
 
         <div class="files-folders-row">
             <div class="individual-element">
                 <p>Lenguajes</p>
-                <img src="/imgs/file.png" alt="file" id="languages">
+                <img src="/imgs/icons/file.png" alt="file" id="languages">
             </div>
         </div>
 
         <div class="files-folders-row">
             <div class="individual-element">
                 <p>Contacto</p>
-                <img src="/imgs/mail.png" alt="email" id="contact">
+                <img src="/imgs/icons/mail.png" alt="email" id="contact">
             </div>
         </div>
 
@@ -43,7 +43,7 @@
             <div class="individual-element">
                 <a href="https://github.com/MedhoMs">
                     <p>Github</p>
-                    <img src="/imgs/github.png" alt="email" id="github">
+                    <img src="/imgs/icons/github.png" alt="email" id="github">
                 </a>
             </div>
         </div>
@@ -52,7 +52,7 @@
     <dialog id="dialog-content"><!--closedby="any"-->
         <div id="window-title">
             <h2 id="dynamic-title"></h2>
-            <img src="/imgs/cancelar.png" alt="salir" id="close-dialog">
+            <img src="/imgs/icons/cancelar.png" alt="salir" id="close-dialog">
         </div>
 
         <iframe src="/pages/projects.html" class="iframe-dialog" id="iframe-projects"></iframe>
@@ -62,7 +62,7 @@
 
     <footer>
         <div>
-            <img src="/imgs/windows.png" alt="" id="windows-button">
+            <img src="/imgs/icons/windows.png" alt="" id="windows-button">
             <div id="windows-button-options">
                 <div class="each-windows-option">
                     <p>Background</p>
@@ -88,5 +88,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script type="module" src="/js/components/dialog.js"></script>
 </body>
 </html>
