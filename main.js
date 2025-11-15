@@ -1,5 +1,5 @@
 const dialog = document.getElementById("dialog-content");
-const fileFolder = document.querySelectorAll(".file-folder"); //Todas las imagenes con esa clase
+let individualElement = document.querySelectorAll(".individual-element"); //Divs que contienen las imagenes y los titulos
 let closeDialog = document.getElementById("close-dialog");
 let iframeDialog = document.getElementsByClassName("iframe-dialog"); //Todos los iframes
 const windowTitle = document.getElementById("window-title"); //Div con el titulo de la ventana y el boton de cerrar
@@ -16,6 +16,17 @@ let dynamicTitle = document.getElementById("dynamic-title"); //El h2 del dialog
 let windowsButtonOptions = document.getElementById("windows-button-options"); //Es una ventana de options que se abre al pulsar la imagen de windows
 
 ///////DISPLAYS///////
+
+
+///////GLOBAL VARIABLES///////
+let elementSelected; //Usado para el e.currentTarget, que será el div
+let title; //Usado para extraer el innerHTML del siguiente elemento del e.currentTarget, el <p>nombre</p> del file/folder
+let assignPages; //Usado para extraer el valor del objeto "pages", e introducirlo en el "src" del <iframe>, optimizacion pura
+let showIframeDialog; //Usado para seleccionar el iframe de los que hay en el dialog y decidir si mostrarlo o no;
+let windowsOptionActive = true; //Usado para determinar si las opciones de windows estan abiertas o cerradas
+let backgroundIndexList = 0; //Usado para identificar en que posicion de la lista de backgrounds estoy
+
+///////GLOBAL VARIABLES///////
 
 
 ///////OBJECTS-LISTS///////
@@ -53,22 +64,16 @@ setInterval(updateTimeDate, 1000);
 updateTimeDate();
 
 
-const backgroundImagesList = ["/imgs/background-desktop0.jpg", "/imgs/background-desktop1.jpg", "/imgs/background-desktop2.jpg"];
+const backgroundImagesList = ["/imgs/backgrounds/background-desktop0.jpg", "/imgs/backgrounds/background-desktop1.jpg", "/imgs/backgrounds/background-desktop2.jpg"];
 
 
 ///////OBJECTS-LISTS///////
 
-let elementSelected; //Usado para el e.currentTarget
-let title; //Usado para extraer el innerHTML del siguiente elemento del e.currentTarget, el <p>nombre</p> del file/folder
-let assignPages; //Usado para extraer el valor del objeto "pages", e introducirlo en el "src" del <iframe>, optimizacion pura
-let showIframeDialog; //Usado para seleccionar el iframe de los que hay en el dialog y decidir si mostrarlo o no;
-let windowsOptionActive = true; //Usado para determinar si las opciones de windows estan abiertas o cerradas
-let backgroundIndexList = 0; //Usado para identificar en que posicion de la lista de backgrounds estoy
 
 ///////EVENTS///////
 
-for (let i = 0; i < fileFolder.length; i++) {
-    fileFolder[i].addEventListener("mouseup", openFileFolder);
+for (let i = 0; i < individualElement.length; i++) {
+    individualElement[i].addEventListener("mouseup", openFileFolder);
 }
 
 closeDialog.addEventListener("mouseup", closeDialogAction);
@@ -105,12 +110,12 @@ dialog.addEventListener("mouseup", () => {
 //////FUNCTIONS//////
 
 function openFileFolder(e) {
-    elementSelected = e.currentTarget; //Selecciono el elemento que acabo de pulsar (la imagen)
-    title = elementSelected.nextElementSibling.innerHTML; //El "title" sera el contenido del siguiente elemento de elementSelected(imagen), que sera un <p>
+    elementSelected = e.currentTarget; //Selecciono el elemento que acabo de pulsar (el div)
+    title = elementSelected.firstElementChild.innerHTML; //El "title" sera el contenido del siguiente elemento de elementSelected(imagen), que sera un <p>
     dynamicTitle.innerHTML = title; //Contenido del h2 del dialog
 
     if (pagesDictKeys.includes(title)) { //Si en las keys del objeto se encuentra "title":
-
+    
         for (let i = 0; i < pagesDictKeys.length; i++) {
             if (title === pagesDictKeys[i]) { //Si "title" es igual a alguna de las keys:
                 assignPages = pagesDict[i][1]; //A "assignPages" le asigno el value correspondiente a la key[i]
@@ -125,14 +130,12 @@ function openFileFolder(e) {
     showIframeDialog = document.getElementById(`iframe-${assignPages}`); //Selecciono el iframe especifico segun su id
     showIframeDialog.hidden = false; //Le quito el hidden para que solo se muestre ese
     
-    //iframeDialog.setAttribute("src", `/pages/${assignPages}.html`);
-
     dialog.showModal();
 }
 
 function closeDialogAction() {
-    dialog.style.top = "15%";
-    dialog.style.left = "30%";
+    dialog.style.top = "4%"; //Reseteo la posicion del dialog
+    dialog.style.left = "23%";
     dialog.requestClose();
 }
 

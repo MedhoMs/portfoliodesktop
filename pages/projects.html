@@ -7,6 +7,62 @@
     <title>Document</title>
 </head>
 <body>
-    <p>PAGINA DE PROYECTOS</p>
+    <h1>MIS PROYECTOS</h1>
+
+    <p>Estos son algunos de los proyectos que he estado desarrollando, principalmente en JavaScript:</p>
+
+    <div id="display-projects">
+        <nav>
+            <p name="slidding-puzzle">Slidding Puzzle</p>
+            <p name="guess-the-flag">Guess the Flag</p>
+            <p name="rpg-adventure">RPG Aventure</p>
+            <p name="docentes-gamificando">Docentes Gamificando</p>
+        </nav>
+
+        <div id="projects-container">
+            <div id="slidding-puzzle" class="image-and-description" hidden>
+                <img src="/imgs/projects/sliding-puzzle.jpg" alt="" class="project-image">
+                <p class="project-description">
+                    Un simple juego del mítico puzle deslizante. Para mover cada pieza debes arrastrar con el<br>
+                    ratón. Puedes observar el tiempo y los movimientos que has necesitado al completar el puzle. 
+                    <br><br>Hecho enteramente en JavaScript.
+                </p>
+                <button onclick="window.open('https://github.com/MedhoMs/slidepuzzle', '_blank')">Ver Proyecto</button>
+            </div>
+
+            <div id="guess-the-flag" class="image-and-description" hidden>
+                <img src="/imgs/projects/guess-the-flag.jpg" alt="" class="project-image">
+                <p class="project-description">
+                    Un educativo juego en que el cuál iran apareciendo las banderas de los diferentes países a medida
+                    que las vayas acertando. Muy ideal por si quieres aprenderte las banderas o demostrar cuantas te sabes.
+                    <br><br>Hecho enteramente en JavaScript.
+                </p>
+                <button onclick="window.open('https://github.com/MedhoMs/gameguesstheflag', '_blank')">Ver Proyecto</button>
+            </div>
+
+            <div id="rpg-adventure" class="image-and-description" hidden>
+                <img src="/imgs/projects/las-aventuras-de-sestayo.jpg" alt="" class="project-image">
+                <p class="project-description">
+                    Un simple RPG por turnos en el cuál un héroe (tu mismo), se enfrenta contra los diferentes monstruos<br>
+                    que habitan en el reino. Vas abriendote paso entre los monstruos para conseguir llegar al castillo.
+                    <br><br>Hecho enteramente en JavaScript.
+                    <br>(Sigue en desarrollo)
+                </p>
+                <button onclick="window.open('https://github.com/MedhoMs/lasAventurasDeSestayo', '_blank')">Ver Proyecto</button>
+            </div>
+
+            <div id="docentes-gamificando" class="image-and-description" hidden>
+                <img src="/imgs/projects/docentes-gamificando.jpg" alt="" class="project-image">
+                <p class="project-description">
+                    Un rediseño de la página web Docentes Gamificando, un pequeño proyecto realizado durante la estancia<br>
+                    de prácticas en 1º DAW.
+                    <br><br>Diseñado en Vue.js y Tailwind, traspasado a Statamic CLI Tool 3.6.1.
+                </p>
+                <button onclick="window.open('https://github.com/MedhoMs/layoutdocentesgamificando', '_blank')">Ver Proyecto</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/projects.js"></script>
 </body>
 </html>
